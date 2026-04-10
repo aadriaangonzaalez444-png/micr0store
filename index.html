@@ -42,12 +42,11 @@ nav{
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:0 20px;
   background:#f5f5f7;
 }
 
 .hero img{
-  width:320px;
+  width:300px;
   margin-bottom:40px;
 }
 
@@ -57,12 +56,11 @@ nav{
 
 .hero p{
   margin-top:20px;
-  font-size:1.2rem;
   opacity:0.6;
 }
 
 .btn{
-  margin-top:40px;
+  margin-top:30px;
   padding:15px 30px;
   border-radius:30px;
   background:#0071e3;
@@ -80,7 +78,7 @@ nav{
 
 .title{
   font-size:2.5rem;
-  margin-bottom:30px;
+  margin-bottom:40px;
 }
 
 /* FEATURES */
@@ -88,17 +86,16 @@ nav{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:30px;
-  margin-top:50px;
 }
 
 .feature{
-  padding:40px;
+  padding:30px;
   background:#fafafa;
   border-radius:20px;
 }
 
-/* IMAGE BLOCK */
-.big-image{
+/* BIG IMAGE */
+.big-img{
   width:100%;
   max-width:600px;
   margin:40px auto;
@@ -118,12 +115,34 @@ nav{
   text-decoration:none;
 }
 
+/* COMPARE */
+.compare{
+  text-align:left;
+  max-width:700px;
+  margin:40px auto;
+}
+
+.compare li{
+  margin-bottom:10px;
+}
+
 /* TESTIMONIAL */
 .testimonial{
   max-width:600px;
-  margin:30px auto;
+  margin:20px auto;
   font-style:italic;
   opacity:0.7;
+}
+
+/* FAQ */
+.faq{
+  text-align:left;
+  max-width:700px;
+  margin:auto;
+}
+
+.faq h4{
+  margin-top:20px;
 }
 
 /* FOOTER */
@@ -152,80 +171,81 @@ footer{
 <!-- HERO -->
 
 <section class="hero">
-
-  <img src="https://images.unsplash.com/photo-1585386959984-a41552231658" alt="Lark M2">
-
-  <h1>Audio profesional.  
-  Sin esfuerzo.</h1>
-
-  <p>El micrófono inalámbrico que cabe en tu bolsillo.</p>
-
-<a href="#comprar" class="btn">Comprar ahora</a>
-
+  <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
+  <h1>Sonido profesional.  
+  Sin cables.</h1>
+  <p>El micro que usan los creadores modernos.</p>
+  <a href="#comprar" class="btn">Comprar ahora</a>
 </section>
 
 <!-- FEATURES -->
 
 <section class="section">
-
-  <h2 class="title">Diseñado para creadores</h2>
+  <h2 class="title">Por qué elegirlo</h2>
 
   <div class="features">
-    <div class="feature">
-      <h3>Ultraligero</h3>
-      <p>Pesa solo unos gramos. Ni lo notarás.</p>
-    </div>
-
-```
-<div class="feature">
-  <h3>Plug & Play</h3>
-  <p>Conecta y empieza a grabar al instante.</p>
-</div>
-
-<div class="feature">
-  <h3>Audio limpio</h3>
-  <p>Cancelación inteligente de ruido.</p>
-</div>
-
-<div class="feature">
-  <h3>Batería duradera</h3>
-  <p>Horas de grabación sin interrupciones.</p>
-</div>
-```
-
+    <div class="feature"><h3>Ultraligero</h3><p>Solo unos gramos.</p></div>
+    <div class="feature"><h3>Plug & Play</h3><p>Funciona al instante.</p></div>
+    <div class="feature"><h3>Cancelación ruido</h3><p>Audio limpio siempre.</p></div>
+    <div class="feature"><h3>Batería larga</h3><p>Hasta 10h uso.</p></div>
   </div>
-
 </section>
 
-<!-- IMAGE -->
+<!-- STORY -->
 
 <section class="section">
-  <img class="big-image" src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
-  <h2 class="title">Calidad que se escucha</h2>
-  <p>Captura tu voz con claridad profesional estés donde estés.</p>
+  <img class="big-img" src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd">
+  <h2 class="title">Diseñado para creadores</h2>
+  <p>Graba contenido en cualquier lugar sin preocuparte por cables o calidad.</p>
 </section>
 
-<!-- PRICE -->
+<!-- COMPARACIÓN -->
+
+<section class="section">
+  <h2 class="title">Por qué es mejor</h2>
+
+  <ul class="compare">
+    <li>✔ Más ligero que otros micros</li>
+    <li>✔ Mejor relación calidad/precio</li>
+    <li>✔ Configuración instantánea</li>
+    <li>✔ Ideal para TikTok, YouTube, entrevistas</li>
+  </ul>
+</section>
+
+<!-- PRECIO -->
 
 <section class="section" id="comprar">
-
   <h2 class="title">Consíguelo ahora</h2>
-
   <div class="price">49,90€</div>
-
-<a href="TU_LINK_STRIPE" class="btn-buy">Comprar ahora</a>
-
+  <a href="TU_LINK_STRIPE" class="btn-buy">Comprar ahora</a>
 </section>
 
 <!-- TESTIMONIOS -->
 
 <section class="section">
+  <h2 class="title">Opiniones reales</h2>
+  <p class="testimonial">"La calidad es increíble para lo pequeño que es." — Sergio</p>
+  <p class="testimonial">"Perfecto para contenido diario." — Laura</p>
+</section>
 
-  <h2 class="title">Opiniones</h2>
+<!-- FAQ -->
 
-  <p class="testimonial">"No parece un micro tan pequeño. Suena increíble." — Sergio</p>
-  <p class="testimonial">"Lo uso para TikTok y YouTube. Brutal." — Carla</p>
+<section class="section">
+  <h2 class="title">Preguntas frecuentes</h2>
 
+  <div class="faq">
+    <h4>¿Funciona con iPhone y Android?</h4>
+    <p>Sí, es compatible con ambos.</p>
+
+```
+<h4>¿Necesita app?</h4>
+<p>No, funciona directamente al conectarlo.</p>
+
+<h4>¿Cuánto dura la batería?</h4>
+<p>Aproximadamente 8–10 horas.</p>
+```
+
+  </div>
 </section>
 
 <footer>
