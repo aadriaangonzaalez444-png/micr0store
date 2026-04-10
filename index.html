@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micr0Store — Minimalismo en estado puro</title>
+<title>Micr0Store — Tecnología para creadores</title>
 
 <style>
 
@@ -13,7 +13,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 }
 
 body{
@@ -30,9 +30,17 @@ nav{
   padding:18px 60px;
   display:flex;
   justify-content:space-between;
-  background:rgba(255,255,255,0.8);
-  backdrop-filter:blur(14px);
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid #eee;
+  z-index:1000;
+}
+
+nav a{
+  text-decoration:none;
+  color:#111;
+  margin-left:25px;
+  font-size:0.95rem;
 }
 
 /* HERO */
@@ -43,26 +51,23 @@ nav{
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:0 30px;
+  padding:0 20px;
 }
 
-.hero h2{
+.hero h1{
   font-size:4rem;
-  font-weight:700;
   max-width:900px;
-  line-height:1.05;
 }
 
 .hero p{
   margin-top:20px;
-  font-size:1.2rem;
   opacity:0.6;
-  max-width:600px;
+  font-size:1.2rem;
 }
 
-.btn-main{
+.btn{
   margin-top:40px;
-  padding:16px 34px;
+  padding:15px 30px;
   border-radius:30px;
   background:#0071e3;
   color:#fff;
@@ -71,59 +76,78 @@ nav{
 
 /* SECTION */
 .section{
-  padding:140px 40px;
-  max-width:1200px;
+  padding:120px 30px;
+  max-width:1100px;
   margin:auto;
 }
 
-.section-title{
+.title{
   text-align:center;
-  font-size:2.8rem;
-  margin-bottom:100px;
+  font-size:2.5rem;
+  margin-bottom:60px;
 }
 
 /* PRODUCT */
 .product{
   text-align:center;
-  margin-bottom:140px;
+  margin-bottom:120px;
 }
 
 .product img{
   width:100%;
-  max-width:500px;
-  margin-bottom:40px;
+  max-width:450px;
   border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
-}
-
-.product h3{
-  font-size:2.5rem;
-}
-
-.tagline{
-  margin-top:10px;
-  font-size:1.2rem;
-  opacity:0.7;
-}
-
-.desc{
-  margin:15px auto;
-  max-width:600px;
-  opacity:0.6;
+  margin-bottom:30px;
 }
 
 .price{
-  font-size:1.4rem;
+  margin:15px 0;
   font-weight:600;
-  margin:20px 0;
 }
 
 .btn-buy{
-  padding:14px 28px;
-  border-radius:25px;
   background:#111;
   color:#fff;
+  padding:12px 25px;
+  border-radius:20px;
   text-decoration:none;
+}
+
+/* ABOUT */
+.about{
+  text-align:center;
+  max-width:700px;
+  margin:auto;
+  font-size:1.1rem;
+  opacity:0.7;
+}
+
+/* TEAM */
+.team{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.member{
+  text-align:center;
+}
+
+.member img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  margin-bottom:10px;
+}
+
+/* TESTIMONIALS */
+.testimonial{
+  text-align:center;
+  max-width:600px;
+  margin:40px auto;
+  font-style:italic;
+  opacity:0.7;
 }
 
 /* FOOTER */
@@ -133,13 +157,6 @@ footer{
   opacity:0.5;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .hero h2{
-    font-size:2.5rem;
-  }
-}
-
 </style>
 
 </head>
@@ -147,51 +164,102 @@ footer{
 <body>
 
 <nav>
-  <h1>Micr0Store</h1>
+  <strong>Micr0Store</strong>
+  <div>
+    <a href="#productos">Productos</a>
+    <a href="#about">Sobre</a>
+    <a href="#equipo">Equipo</a>
+  </div>
 </nav>
 
 <section class="hero">
-  <h2>Herramientas profesionales.  
-  En tu bolsillo.</h2>
-  <p>Menos equipo. Más creación.</p>
-  <a href="#productos" class="btn-main">Ver productos</a>
+  <h1>Herramientas profesionales.  
+  En tu bolsillo.</h1>
+  <p>Diseñado para creadores modernos.</p>
+  <a href="#productos" class="btn">Explorar</a>
 </section>
+
+<!-- PRODUCTOS -->
 
 <section class="section" id="productos">
 
-  <h2 class="section-title">Diseñado para creadores</h2>
+  <h2 class="title">Productos</h2>
 
   <div class="product">
-    <img src="https://images.unsplash.com/photo-1585386959984-a41552231658" alt="Micrófono">
+    <img src="https://images.unsplash.com/photo-1581090700227-4c4f50d4b0e3" alt="">
     <h3>Micr0Wave Pro</h3>
-    <div class="tagline">Audio limpio. Sin esfuerzo.</div>
-    <div class="desc">Micrófono inalámbrico ultraligero con cancelación inteligente.</div>
+    <p>Micrófono inalámbrico profesional</p>
     <div class="price">29,90€</div>
-    <a href="TU_LINK_STRIPE" class="btn-buy">Comprar</a>
+    <a href="#" class="btn-buy">Comprar</a>
   </div>
 
   <div class="product">
-    <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd" alt="Micrófono con luz">
-    <h3>Micr0Wave Pro — LED</h3>
-    <div class="tagline">Luz perfecta, siempre.</div>
-    <div class="desc">Micrófono con iluminación integrada para grabar en cualquier entorno.</div>
+    <img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd" alt="">
+    <h3>Micr0Wave Pro LED</h3>
+    <p>Con iluminación integrada</p>
     <div class="price">34,90€</div>
-    <a href="TU_LINK_STRIPE" class="btn-buy">Comprar</a>
+    <a href="#" class="btn-buy">Comprar</a>
   </div>
 
   <div class="product">
-    <img src="https://images.unsplash.com/photo-1603575448360-153f093fd0d2" alt="Luz LED">
+    <img src="https://images.unsplash.com/photo-1603575448360-153f093fd0d2" alt="">
     <h3>CreatorCube LED</h3>
-    <div class="tagline">Ilumina sin complicaciones.</div>
-    <div class="desc">Luz portátil minimalista para mejorar cualquier grabación.</div>
+    <p>Luz portátil para creadores</p>
     <div class="price">12,90€</div>
-    <a href="TU_LINK_STRIPE" class="btn-buy">Comprar</a>
+    <a href="#" class="btn-buy">Comprar</a>
   </div>
 
 </section>
 
+<!-- ABOUT -->
+
+<section class="section" id="about">
+  <h2 class="title">Sobre Micr0Store</h2>
+  <p class="about">
+    Micr0Store nace en 2023 con una idea clara: hacer que cualquier persona pueda crear contenido profesional sin gastar miles de euros.  
+    Diseñamos herramientas simples, accesibles y potentes para la nueva generación de creadores digitales.
+  </p>
+</section>
+
+<!-- TESTIMONIOS -->
+
+<section class="section">
+  <h2 class="title">Clientes</h2>
+
+  <p class="testimonial">"Literalmente cambió mi forma de grabar contenido." — Ana, creadora</p>
+  <p class="testimonial">"Calidad brutal por el precio." — Marcos, streamer</p>
+  <p class="testimonial">"Minimalismo y potencia en uno." — Laura, TikTok</p>
+
+</section>
+
+<!-- EQUIPO -->
+
+<section class="section" id="equipo">
+  <h2 class="title">Nuestro equipo</h2>
+
+  <div class="team">
+    <div class="member">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <p><strong>Daniel Ruiz</strong><br>CEO</p>
+    </div>
+
+```
+<div class="member">
+  <img src="https://randomuser.me/api/portraits/women/44.jpg">
+  <p><strong>Laura Gómez</strong><br>Marketing</p>
+</div>
+
+<div class="member">
+  <img src="https://randomuser.me/api/portraits/men/65.jpg">
+  <p><strong>Alex Torres</strong><br>Ingeniería</p>
+</div>
+```
+
+  </div>
+</section>
+
 <footer>
-  © 2026 Micr0Store
+  © 2026 Micr0Store — Tecnología accesible para todos.
 </footer>
 
 </body>
