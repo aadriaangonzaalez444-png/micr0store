@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micr0Store — Audio y Luz Pro</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #111;
+        }
+
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            background: white;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 28px;
+            background: #000;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .products {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .product {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .product h2 {
+            font-size: 36px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Micr0Store</div>
+    <nav>
+        <a href="#productos" style="margin-right: 20px; text-decoration:none; color:#111;">Productos</a>
+        <a href="mailto:contact@micr0store.com" style="text-decoration:none; color:#111;">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Micr0Store</h1>
+    <p>Equipamiento pro al precio más bajo de internet. Calidad sin drama.</p>
+    <a class="btn" href="#productos">Ver Productos</a>
+</section>
+
+<section id="productos" class="products">
+
+    <!-- PRODUCTO 1 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1581091870636-0ecdcf2a6f6a?auto=format&fit=crop&w=1200&q=80" alt="Micrófono Pro">
+        <div>
+            <h2>Micrófono Lavalier Pro — Modelo 1</h2>
+            <p>Audio nítido para creadores, entrevistas y contenido top. Conexión universal y cero complicaciones.</p>
+            <p><strong>Precio: 14,99€</strong></p>
+            <a class="btn" href="#">Comprar ahora</a>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 2 -->
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e8?auto=format&fit=crop&w=1200&q=80" alt="Luz LED Creativa">
+        <div>
+            <h2>Luz LED Creativa — Modelo 1</h2>
+            <p>Iluminación perfecta para grabación, directos y estética premium. Llévala a cualquier parte.</p>
+            <p><strong>Precio: 11,99€</strong></p>
+            <a class="btn" href="#">Comprar ahora</a>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    Micr0Store © 2026 — Calidad directa al bolsillo.
+</footer>
+
+</body>
+</html>
