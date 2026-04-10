@@ -1,307 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micr0Store — Elite Creator Gear</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Micr0Store — Creator Essentials</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        background: #f5f5f5;
-        color: #111;
-        transition: background .3s, color .3s;
-    }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
 
-    body.dark {
-        background: #111;
-        color: #f5f5f5;
-    }
+body {
+  background: #111;
+  color: #fff;
+  overflow-x: hidden;
+}
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-        background: white;
-        border-bottom: 1px solid #eee;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        transition: background .3s;
-    }
+/* NAV */
+nav {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+}
 
-    body.dark header {
-        background: #1b1b1b;
-        border-color: #333;
-    }
+nav h1 {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
 
-    .logo {
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: -1px;
-    }
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  animation: fadeIn 1.2s ease forwards;
+}
 
-    nav a {
-        margin-left: 25px;
-        text-decoration: none;
-        color: inherit;
-        font-weight: 500;
-    }
+.hero h2 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  max-width: 800px;
+}
 
-    #darkmode {
-        cursor: pointer;
-        padding: 8px 14px;
-        border-radius: 6px;
-        border: 1px solid #333;
-        background: transparent;
-        color: inherit;
-    }
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 18px;
+  opacity: 0.8;
+  max-width: 600px;
+}
 
-    .hero {
-        padding: 100px 20px;
-        text-align: center;
-    }
+/* BUTTON */
+.btn {
+  margin-top: 30px;
+  display: inline-block;
+  background: #fff;
+  color: #111;
+  padding: 14px 26px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
 
-    .hero h1 {
-        font-size: 64px;
-        margin: 0;
-        font-weight: 800;
-        animation: fadein 1s ease;
-    }
+.btn:hover {
+  background: #ccc;
+}
 
-    .hero p {
-        font-size: 22px;
-        opacity: 0.8;
-        animation: fadein 1.2s ease;
-    }
+/* PRODUCTS */
+.section {
+  padding: 80px 40px;
+}
 
-    @keyframes fadein {
-        from { opacity: 0; transform: translateY(20px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
+h3 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
 
-    .btn {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 14px 28px;
-        background: #000;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: 600;
-    }
+.product {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 14px;
+  margin-bottom: 35px;
+  transition: 0.3s;
+}
 
-    body.dark .btn {
-        background: #fff;
-        color: #000;
-    }
+.product:hover {
+  transform: translateY(-4px);
+  background: #222;
+}
 
-    .products {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
+.product-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
 
-    .section-title {
-        font-size: 42px;
-        font-weight: 800;
-        margin-bottom: 30px;
-        text-align: center;
-    }
+.product-desc {
+  opacity: 0.8;
+  margin: 10px 0 20px;
+}
 
-    .product {
-        padding: 20px;
-        background: white;
-        border-radius: 14px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-bottom: 40px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-        transition: transform .3s;
-    }
+.price {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
 
-    body.dark .product {
-        background: #1b1b1b;
-        box-shadow: none;
-        border: 1px solid #333;
-    }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
 
-    .product:hover {
-        transform: translateY(-4px);
-    }
-
-    .product img {
-        width: 300px;
-        border-radius: 12px;
-    }
-
-    .add-btn {
-        padding: 10px 18px;
-        background: #000;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-
-    body.dark .add-btn {
-        background: #fff;
-        color: #111;
-    }
-
-    /* CARRITO */
-    .cart {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #000;
-        color: #fff;
-        padding: 14px 20px;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    .cart-box {
-        position: fixed;
-        bottom: 90px;
-        right: 20px;
-        width: 310px;
-        background: white;
-        padding: 20px;
-        border-radius: 12px;
-        display: none;
-    }
-
-    body.dark .cart-box {
-        background: #1b1b1b;
-        color: #fff;
-        border: 1px solid #333;
-    }
-
-    .checkout-btn {
-        display: block;
-        margin-top: 20px;
-        background: #000;
-        text-align: center;
-        color: #fff;
-        padding: 12px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    footer {
-        text-align: center;
-        padding: 40px;
-        margin-top: 80px;
-        opacity: 0.8;
-    }
+/* ANIM */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Micr0Store</div>
-    <nav>
-        <a href="#productos">Productos</a>
-        <a href="#coleccion">Colección</a>
-        <a href="#about">Sobre nosotros</a>
-    </nav>
-    <button id="darkmode">🌙</button>
-</header>
+<nav>
+  <h1>Micr0Store</h1>
+</nav>
 
 <section class="hero">
-    <h1>Micr0Store</h1>
-    <p>Gear minimal, calidad brutal.</p>
-    <a class="btn" href="#productos">Ver productos</a>
+  <h2>Equipamiento para Creadores del Futuro.</h2>
+  <p>Micrófonos profesionales y luces LED creadas para que cualquier persona pueda grabar contenido con calidad brutal sin gastar un dineral.</p>
+  <a class="btn" href="#productos">Ver productos</a>
 </section>
 
-<section id="productos" class="products">
-    <h2 class="section-title">Productos</h2>
+<section class="section" id="productos">
+  <h3>Productos</h3>
 
-    <div class="product">
-        <img src="https://images.unsplash.com/photo-1581091870636-0ecdcf2a6f6a?auto=format&fit=crop&w=800&q=80">
-        <div>
-            <h2>Micrófono PRO — Modelo 1</h2>
-            <p>Sonido limpio, cancelación de ruido, rendimiento profesional.</p>
-            <button class="add-btn" onclick="addToCart('Micrófono PRO', 14.99)">Añadir (14,99€)</button>
-        </div>
-    </div>
+  <div class="product">
+    <div class="product-title">Micr0Wave Pro</div>
+    <div class="product-desc">Micrófono inalámbrico con cancelación inteligente y audio de estudio.</div>
+    <div class="price">29,90€</div>
+    <div class="btn">Comprar</div>
+  </div>
 
-    <div class="product">
-        <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e8?auto=format&fit=crop&w=800&q=80">
-        <div>
-            <h2>Luz LED Creator — Modelo 1</h2>
-            <p>Iluminación RGB compacta. Sólida para creadores.</p>
-            <button class="add-btn" onclick="addToCart('Luz LED Creator', 11.99)">Añadir (11,99€)</button>
-        </div>
-    </div>
+  <div class="product">
+    <div class="product-title">Micr0Wave Pro — Luz LED Edition</div>
+    <div class="product-desc">El mismo micro pro pero con luz LED integrada para creadores que graban en movimiento.</div>
+    <div class="price">34,90€</div>
+    <div class="btn">Comprar</div>
+  </div>
+
+  <div class="product">
+    <div class="product-title">CreatorCube LED</div>
+    <div class="product-desc">Panel LED ultracompacto estilo estudio para iluminar cualquier grabación.</div>
+    <div class="price">12,90€</div>
+    <div class="btn">Comprar</div>
+  </div>
+
 </section>
 
-<section id="coleccion" class="products">
-    <h2 class="section-title">Colección</h2>
-    <p style="text-align:center;">Nueva colección Creator Pack próximamente.</p>
-</section>
-
-<section id="about" class="products">
-    <h2 class="section-title">Sobre nosotros</h2>
-    <p style="max-width:800px;margin:auto;text-align:center;">
-        Micr0Store nace para creadores que buscan calidad sin pagar de más.  
-        Minimalismo, precio justo y productos que funcionan.
-    </p>
-</section>
-
-<!-- CARRITO -->
-<div class="cart" onclick="toggleCart()">🛒 (<span id="cart-count">0</span>)</div>
-
-<div class="cart-box" id="cart-box">
-    <div id="cart-items"></div>
-    <div id="cart-total" style="margin-top:10px;"></div>
-    <a id="checkout-link" class="checkout-btn">Hacer pedido</a>
-</div>
-
-<footer>
-    Micr0Store © 2026 — Calidad sin drama.
-</footer>
-
-<script>
-    document.getElementById("darkmode").onclick = () =>
-        document.body.classList.toggle("dark");
-
-    let cart = [];
-
-    function addToCart(name, price) {
-        cart.push({name, price});
-        updateCart();
-    }
-
-    function updateCart() {
-        document.getElementById("cart-count").innerText = cart.length;
-
-        let html = "";
-        let total = 0;
-
-        cart.forEach(item => {
-            html += `<div>${item.name} — ${item.price.toFixed(2)}€</div>`;
-            total += item.price;
-        });
-
-        document.getElementById("cart-items").innerHTML = html;
-        document.getElementById("cart-total").innerText = "Total: " + total.toFixed(2) + "€";
-
-        let mail = `mailto:micr0store@gmail.com?subject=Pedido&body=${encodeURIComponent(JSON.stringify(cart))}`;
-        document.getElementById("checkout-link").href = mail;
-    }
-
-    function toggleCart() {
-        let box = document.getElementById("cart-box");
-        box.style.display = box.style.display === "block" ? "none" : "block";
-    }
-</script>
+<footer>© 2026 Micr0Store — Todos los derechos reservados.</footer>
 
 </body>
 </html>
