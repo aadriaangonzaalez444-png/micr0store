@@ -1,119 +1,171 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micr0Store — Calidad que Cabe en tu Bolsillo</title>
+<title>Micr0Store — Minimalismo en estado puro</title>
 
 <style>
+
 /* RESET */
 *{
-  margin:0; padding:0; box-sizing:border-box;
-  font-family:-apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
 }
 
 body{
-  background:#fff; color:#111;
-  line-height:1.6; scroll-behavior:smooth;
+  background:#fff;
+  color:#111;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
 }
 
 /* NAV */
 nav{
-  width:100%; padding:22px 50px;
-  display:flex; justify-content:space-between; align-items:center;
-  position:sticky; top:0;
-  background:rgba(255,255,255,0.9); backdrop-filter:blur(12px);
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:18px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(14px);
   border-bottom:1px solid #eee;
+  z-index:1000;
 }
 
-nav h1{ font-size:1.35rem; font-weight:600; letter-spacing:-0.5px; }
+nav h1{
+  font-size:1.2rem;
+  font-weight:600;
+}
 
 /* HERO */
 .hero{
-  text-align:center; padding:170px 40px 140px;
-  animation:fadeIn 1.3s ease forwards;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 30px;
 }
 
 .hero h2{
-  font-size:3.5rem; font-weight:700; line-height:1.1;
-  max-width:900px; margin:0 auto 20px;
+  font-size:4rem;
+  font-weight:700;
+  max-width:900px;
+  line-height:1.05;
+  margin-bottom:25px;
 }
 
 .hero p{
-  font-size:1.25rem; opacity:0.7;
-  max-width:650px; margin:0 auto;
+  font-size:1.3rem;
+  opacity:0.6;
+  max-width:600px;
 }
 
 .btn-main{
-  margin-top:45px; padding:15px 34px;
-  font-size:1.05rem; font-weight:600;
-  background:#111; color:#fff; border-radius:26px;
-  text-decoration:none; display:inline-block; transition:0.2s;
+  margin-top:40px;
+  padding:16px 34px;
+  border-radius:30px;
+  background:#0071e3;
+  color:#fff;
+  font-weight:500;
+  text-decoration:none;
 }
-.btn-main:hover{ background:#333; }
+
+.btn-main:hover{
+  background:#005bbd;
+}
 
 /* SECTION */
 .section{
-  padding:100px 40px; max-width:1100px; margin:auto;
+  padding:140px 40px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .section-title{
-  font-size:2.7rem; margin-bottom:60px;
-  text-align:center; font-weight:700;
+  text-align:center;
+  font-size:2.8rem;
+  font-weight:700;
+  margin-bottom:80px;
 }
 
-/* PRODUCT CARDS */
-.product-card{
-  padding:45px; border-radius:24px;
-  border:1px solid #eaeaea;
-  margin-bottom:55px; transition:0.25s;
-  background:#fafafa;
+/* PRODUCT */
+.product{
+  text-align:center;
+  margin-bottom:120px;
 }
 
-.product-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.09);
+.product h3{
+  font-size:2.5rem;
+  margin-bottom:10px;
 }
 
-.product-title{
-  font-size:2rem; font-weight:700; margin-bottom:10px;
+.tagline{
+  font-size:1.2rem;
+  opacity:0.7;
+  margin-bottom:15px;
 }
 
-.product-slogan{
-  font-size:1.1rem; font-weight:500; opacity:0.8;
-  margin-bottom:14px;
-}
-
-.product-desc{
-  font-size:1.1rem; opacity:0.65;
-  max-width:600px; margin-bottom:22px;
+.desc{
+  font-size:1.05rem;
+  opacity:0.6;
+  max-width:600px;
+  margin:0 auto 20px;
 }
 
 .price{
-  font-size:1.35rem; font-weight:600; margin-bottom:18px;
+  font-size:1.4rem;
+  font-weight:600;
+  margin-bottom:20px;
 }
 
 .btn-buy{
-  padding:14px 24px; font-weight:600;
-  border-radius:20px; background:#0071e3;
-  color:#fff; text-decoration:none;
-  display:inline-block; transition:0.2s;
+  padding:14px 28px;
+  border-radius:25px;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
 }
-.btn-buy:hover{ background:#005bbd; }
+
+.btn-buy:hover{
+  background:#333;
+}
+
+/* DIVIDER */
+.divider{
+  height:1px;
+  background:#eee;
+  margin:80px 0;
+}
 
 /* FOOTER */
 footer{
-  text-align:center; padding:45px;
-  border-top:1px solid #eee; opacity:0.6;
-  margin-top:60px;
+  text-align:center;
+  padding:60px 20px;
+  font-size:0.9rem;
+  opacity:0.5;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn{
-  from{ opacity:0; transform:translateY(25px); }
-  to{ opacity:1; transform:translateY(0); }
+/* MOBILE */
+@media(max-width:768px){
+  .hero h2{
+    font-size:2.5rem;
+  }
+
+  nav{
+    padding:15px 25px;
+  }
 }
+
 </style>
+
 </head>
 
 <body>
@@ -123,42 +175,59 @@ footer{
 </nav>
 
 <section class="hero">
-  <h2>Calidad que antes era de estudio.  
-  Ahora cabe en tu bolsillo.</h2>
-  <p>Los creadores del futuro no necesitan equipos caros. Solo necesitan herramientas que funcionen. Limpio. Simple. Profesional.</p>
-  <a href="#productos" class="btn-main">Explorar productos</a>
+  <h2>Herramientas profesionales.  
+  En tu bolsillo.</h2>
+
+  <p>Menos equipo. Más creación. Tecnología limpia, rápida y lista para grabar.</p>
+
+<a href="#productos" class="btn-main">Ver productos</a>
+
 </section>
 
 <section class="section" id="productos">
-  <h3 class="section-title">Productos diseñados para destacar</h3>
 
-  <div class="product-card">
-    <div class="product-title">Micr0Wave Pro</div>
-    <div class="product-slogan">Sonido nítido. Voz presente. Presión cero.</div>
-    <div class="product-desc">El micrófono inalámbrico favorito de creadores. Ligero como un AirPod. Sonido claro. Cancelación inteligente. Conéctalo y graba.</div>
+  <h2 class="section-title">Diseñado para creadores</h2>
+
+  <div class="product">
+    <h3>Micr0Wave Pro</h3>
+    <div class="tagline">Audio limpio. Sin esfuerzo.</div>
+    <div class="desc">
+      Micrófono inalámbrico ultraligero con cancelación inteligente.
+      Conecta y graba al instante.
+    </div>
     <div class="price">29,90€</div>
-    <a href="REEMPLAZA_AQUI_TU_STRIPE" class="btn-buy">Comprar ahora</a>
+    <a href="TU_LINK_STRIPE" class="btn-buy">Comprar</a>
   </div>
 
-  <div class="product-card">
-    <div class="product-title">Micr0Wave Pro — LED Edition</div>
-    <div class="product-slogan">Graba donde quieras. Luz siempre perfecta.</div>
-    <div class="product-desc">La versión con luz integrada para grabar en entornos oscuros o con poca iluminación. Un combo listo para cualquier creador en movimiento.</div>
+  <div class="divider"></div>
+
+  <div class="product">
+    <h3>Micr0Wave Pro — LED</h3>
+    <div class="tagline">Luz perfecta, siempre.</div>
+    <div class="desc">
+      Versión con iluminación integrada para grabar en cualquier entorno.
+    </div>
     <div class="price">34,90€</div>
-    <a href="REEMPLAZA_AQUI_TU_STRIPE" class="btn-buy">Comprar ahora</a>
+    <a href="TU_LINK_STRIPE" class="btn-buy">Comprar</a>
   </div>
 
-  <div class="product-card">
-    <div class="product-title">CreatorCube LED</div>
-    <div class="product-slogan">Luz suave. Estilo Apple. Tamaño bolsillo.</div>
-    <div class="product-desc">Iluminación minimalista para grabaciones más limpias. Apertura suave, brillo perfecto, cero complicaciones.</div>
+  <div class="divider"></div>
+
+  <div class="product">
+    <h3>CreatorCube LED</h3>
+    <div class="tagline">Ilumina sin complicaciones.</div>
+    <div class="desc">
+      Luz portátil minimalista para mejorar cualquier grabación.
+    </div>
     <div class="price">12,90€</div>
-    <a href="REEMPLAZA_AQUI_TU_STRIPE" class="btn-buy">Comprar ahora</a>
+    <a href="TU_LINK_STRIPE" class="btn-buy">Comprar</a>
   </div>
 
 </section>
 
-<footer>© 2026 Micr0Store — Minimalismo, calidad y futuro.</footer>
+<footer>
+  © 2026 Micr0Store — Diseñado para el futuro.
+</footer>
 
 </body>
 </html>
